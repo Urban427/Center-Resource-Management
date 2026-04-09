@@ -1,0 +1,18 @@
+/* CommonTable.css */
+.sortable-header {
+  align-items: center;
+  gap: 4px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.sortable-header .sort-indicator {
+  opacity: 0;
+  transition: opacity 0.2s;
+  align-items: center;
+}
+
+.sortable-header:hover .sort-indicator,
+.sortable-header .sort-indicator.active {
+  opacity: 0.6;
+}

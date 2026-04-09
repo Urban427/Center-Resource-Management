@@ -1,0 +1,13 @@
+{
+  "refresh": "Refresh",
+  "search": "Search",
+  "status": "Status",
+  "loading": "Loading…",
+  "cancel": "Cancel",
+  "save": "Save",
+  "login": "Login",
+  
+  "ServiceBelongsTo": "Service belongs to EDC system",
+  "appName": "CRM",
+  "ServiceName": "Center Resource Management"
+}

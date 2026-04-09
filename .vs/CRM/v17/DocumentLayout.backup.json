@@ -1,0 +1,968 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Honor\\source\\repos\\CRM\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\domain\\entities\\refreshtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\domain\\entities\\refreshtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\services\\historyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\services\\historyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\infrastructure\\configurations\\devicestatushistoryconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\infrastructure\\configurations\\devicestatushistoryconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\services\\devicetestingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\services\\devicetestingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\infrastructure\\repositories\\devicestatushistoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\infrastructure\\repositories\\devicestatushistoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\controllers\\historycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\controllers\\historycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\services\\devicetypeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\services\\devicetypeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\services\\deviceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\services\\deviceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\controllers\\devicetypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\controllers\\devicetypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\infrastructure\\repositories\\devicetyperepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\infrastructure\\repositories\\devicetyperepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\infrastructure\\repositories\\repositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\infrastructure\\repositories\\repositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\controllers\\devicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\controllers\\devicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\domain\\entities\\devicetype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\domain\\entities\\devicetype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\infrastructure\\configurations\\deviceconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\infrastructure\\configurations\\deviceconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\infrastructure\\configurations\\devicetypeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\infrastructure\\configurations\\devicetypeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\infrastructure\\configurations\\entitychangeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\infrastructure\\configurations\\entitychangeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\infrastructure\\configurations\\entitychangesetconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\infrastructure\\configurations\\entitychangesetconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\infrastructure\\configurations\\refreshtokenconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\infrastructure\\configurations\\refreshtokenconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\infrastructure\\configurations\\trashbinelementconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\infrastructure\\configurations\\trashbinelementconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\infrastructure\\configurations\\userconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\infrastructure\\configurations\\userconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\infrastructure\\persistence\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\infrastructure\\persistence\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\migrations\\20260204082629_updateallconfigurationsv1.3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\migrations\\20260204082629_updateallconfigurationsv1.3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\infrastructure\\configurations\\bookingconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\infrastructure\\configurations\\bookingconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\infrastructure\\repositories\\refreshtokenrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\infrastructure\\repositories\\refreshtokenrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\controllers\\trashcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\controllers\\trashcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\domain\\dto\\tokendto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\domain\\dto\\tokendto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\infrastructure\\repositories\\trashrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\infrastructure\\repositories\\trashrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\domain\\dto\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\domain\\dto\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\infrastructure\\repositories\\devicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\infrastructure\\repositories\\devicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\services\\trashservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\services\\trashservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\services\\bookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\services\\bookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\domain\\entities\\trashbinelement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\domain\\entities\\trashbinelement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\domain\\entities\\entitychangeset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\domain\\entities\\entitychangeset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\domain\\entities\\entitychange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\domain\\entities\\entitychange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\domain\\entities\\device.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\domain\\entities\\device.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\domain\\dto\\devicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\domain\\dto\\devicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\domain\\dto\\statuschangedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\domain\\dto\\statuschangedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\domain\\entities\\devicestatushistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\domain\\entities\\devicestatushistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\domain\\enums\\stageresult .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\domain\\enums\\stageresult .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\domain\\enums\\devicestatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\domain\\enums\\devicestatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\infrastructure\\repositories\\bookingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\infrastructure\\repositories\\bookingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\domain\\enums\\devicelifecycleflags.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\domain\\enums\\devicelifecycleflags.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\services\\dashboardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\services\\dashboardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\domain\\dto\\dashboarddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\domain\\dto\\dashboarddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\domain\\dto\\bookdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\domain\\dto\\bookdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\domain\\entities\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\domain\\entities\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\domain\\enums\\bookingstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\domain\\enums\\bookingstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\domain\\enums\\changeoperation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\domain\\enums\\changeoperation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\domain\\enums\\devicetypestatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\domain\\enums\\devicetypestatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|c:\\users\\honor\\source\\repos\\crm\\crm\\infrastructure\\repositories\\entitychangesetrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BC1637-4190-4CE3-B8D3-8C868AF99BA2}|CRM\\CRM.csproj|solutionrelative:crm\\infrastructure\\repositories\\entitychangesetrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DeviceStatusHistoryConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Configurations\\DeviceStatusHistoryConfiguration.cs",
+              "RelativeDocumentMoniker": "CRM\\Infrastructure\\Configurations\\DeviceStatusHistoryConfiguration.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Configurations\\DeviceStatusHistoryConfiguration.cs",
+              "RelativeToolTip": "CRM\\Infrastructure\\Configurations\\DeviceStatusHistoryConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-28T06:53:59.496Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DeviceService.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Services\\DeviceService.cs",
+              "RelativeDocumentMoniker": "CRM\\Services\\DeviceService.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Services\\DeviceService.cs",
+              "RelativeToolTip": "CRM\\Services\\DeviceService.cs",
+              "ViewState": "AgIAAIAAAAAAAAAAAAAQwIQAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-26T09:00:32.303Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DeviceTypeService.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Services\\DeviceTypeService.cs",
+              "RelativeDocumentMoniker": "CRM\\Services\\DeviceTypeService.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Services\\DeviceTypeService.cs",
+              "RelativeToolTip": "CRM\\Services\\DeviceTypeService.cs",
+              "ViewState": "AgIAAKMAAAAAAAAAAAAcwMQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T12:19:15.319Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TestController.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Controllers\\TestController.cs",
+              "RelativeDocumentMoniker": "CRM\\Controllers\\TestController.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Controllers\\TestController.cs",
+              "RelativeToolTip": "CRM\\Controllers\\TestController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T06:28:58.077Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DeviceTestingService.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Services\\DeviceTestingService.cs",
+              "RelativeDocumentMoniker": "CRM\\Services\\DeviceTestingService.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Services\\DeviceTestingService.cs",
+              "RelativeToolTip": "CRM\\Services\\DeviceTestingService.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAgwGkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T07:32:00.65Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HistoryService.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Services\\HistoryService.cs",
+              "RelativeDocumentMoniker": "CRM\\Services\\HistoryService.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Services\\HistoryService.cs",
+              "RelativeToolTip": "CRM\\Services\\HistoryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T09:35:27.154Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RefreshToken.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\Entities\\RefreshToken.cs",
+              "RelativeDocumentMoniker": "CRM\\Domain\\Entities\\RefreshToken.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\Entities\\RefreshToken.cs",
+              "RelativeToolTip": "CRM\\Domain\\Entities\\RefreshToken.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T16:40:10.4Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DeviceStatusHistoryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Repositories\\DeviceStatusHistoryRepository.cs",
+              "RelativeDocumentMoniker": "CRM\\Infrastructure\\Repositories\\DeviceStatusHistoryRepository.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Repositories\\DeviceStatusHistoryRepository.cs",
+              "RelativeToolTip": "CRM\\Infrastructure\\Repositories\\DeviceStatusHistoryRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T21:08:29.178Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DeviceTypeController.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Controllers\\DeviceTypeController.cs",
+              "RelativeDocumentMoniker": "CRM\\Controllers\\DeviceTypeController.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Controllers\\DeviceTypeController.cs",
+              "RelativeToolTip": "CRM\\Controllers\\DeviceTypeController.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAADwv0MAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T21:03:11.376Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RepositoryBase.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Repositories\\RepositoryBase.cs",
+              "RelativeDocumentMoniker": "CRM\\Infrastructure\\Repositories\\RepositoryBase.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Repositories\\RepositoryBase.cs",
+              "RelativeToolTip": "CRM\\Infrastructure\\Repositories\\RepositoryBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-05T08:32:27.251Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "DeviceType.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\Entities\\DeviceType.cs",
+              "RelativeDocumentMoniker": "CRM\\Domain\\Entities\\DeviceType.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\Entities\\DeviceType.cs",
+              "RelativeToolTip": "CRM\\Domain\\Entities\\DeviceType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T15:47:59.447Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HistoryController.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Controllers\\HistoryController.cs",
+              "RelativeDocumentMoniker": "CRM\\Controllers\\HistoryController.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Controllers\\HistoryController.cs",
+              "RelativeToolTip": "CRM\\Controllers\\HistoryController.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T09:32:20.783Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DeviceController.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Controllers\\DeviceController.cs",
+              "RelativeDocumentMoniker": "CRM\\Controllers\\DeviceController.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Controllers\\DeviceController.cs",
+              "RelativeToolTip": "CRM\\Controllers\\DeviceController.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAwGEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T14:51:20.96Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DeviceTypeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Repositories\\DeviceTypeRepository.cs",
+              "RelativeDocumentMoniker": "CRM\\Infrastructure\\Repositories\\DeviceTypeRepository.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Repositories\\DeviceTypeRepository.cs",
+              "RelativeToolTip": "CRM\\Infrastructure\\Repositories\\DeviceTypeRepository.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAwC4AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T16:44:52.318Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "DeviceConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Configurations\\DeviceConfiguration.cs",
+              "RelativeDocumentMoniker": "CRM\\Infrastructure\\Configurations\\DeviceConfiguration.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Configurations\\DeviceConfiguration.cs",
+              "RelativeToolTip": "CRM\\Infrastructure\\Configurations\\DeviceConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T19:44:44.16Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "20260204082629_UpdateAllConfigurationsV1.3.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Migrations\\20260204082629_UpdateAllConfigurationsV1.3.cs",
+              "RelativeDocumentMoniker": "CRM\\Migrations\\20260204082629_UpdateAllConfigurationsV1.3.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Migrations\\20260204082629_UpdateAllConfigurationsV1.3.cs",
+              "RelativeToolTip": "CRM\\Migrations\\20260204082629_UpdateAllConfigurationsV1.3.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-22T13:05:35.255Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "EntityChangeConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Configurations\\EntityChangeConfiguration.cs",
+              "RelativeDocumentMoniker": "CRM\\Infrastructure\\Configurations\\EntityChangeConfiguration.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Configurations\\EntityChangeConfiguration.cs",
+              "RelativeToolTip": "CRM\\Infrastructure\\Configurations\\EntityChangeConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-22T13:06:16.565Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "EntityChangeSetConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Configurations\\EntityChangeSetConfiguration.cs",
+              "RelativeDocumentMoniker": "CRM\\Infrastructure\\Configurations\\EntityChangeSetConfiguration.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Configurations\\EntityChangeSetConfiguration.cs",
+              "RelativeToolTip": "CRM\\Infrastructure\\Configurations\\EntityChangeSetConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-22T13:06:17.081Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "DeviceTypeConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Configurations\\DeviceTypeConfiguration.cs",
+              "RelativeDocumentMoniker": "CRM\\Infrastructure\\Configurations\\DeviceTypeConfiguration.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Configurations\\DeviceTypeConfiguration.cs",
+              "RelativeToolTip": "CRM\\Infrastructure\\Configurations\\DeviceTypeConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-22T13:06:31Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "CRM\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "CRM\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAQwIoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T16:38:54.273Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Persistence\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "CRM\\Infrastructure\\Persistence\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Persistence\\AppDbContext.cs",
+              "RelativeToolTip": "CRM\\Infrastructure\\Persistence\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T16:35:58.616Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "UserConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Configurations\\UserConfiguration.cs",
+              "RelativeDocumentMoniker": "CRM\\Infrastructure\\Configurations\\UserConfiguration.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Configurations\\UserConfiguration.cs",
+              "RelativeToolTip": "CRM\\Infrastructure\\Configurations\\UserConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T18:12:07.608Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "TrashBinElementConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Configurations\\TrashBinElementConfiguration.cs",
+              "RelativeDocumentMoniker": "CRM\\Infrastructure\\Configurations\\TrashBinElementConfiguration.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Configurations\\TrashBinElementConfiguration.cs",
+              "RelativeToolTip": "CRM\\Infrastructure\\Configurations\\TrashBinElementConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T16:41:28.625Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "RefreshTokenConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Configurations\\RefreshTokenConfiguration.cs",
+              "RelativeDocumentMoniker": "CRM\\Infrastructure\\Configurations\\RefreshTokenConfiguration.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Configurations\\RefreshTokenConfiguration.cs",
+              "RelativeToolTip": "CRM\\Infrastructure\\Configurations\\RefreshTokenConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T16:41:25.176Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "DashBoardController.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Controllers\\DashBoardController.cs",
+              "RelativeDocumentMoniker": "CRM\\Controllers\\DashBoardController.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Controllers\\DashBoardController.cs",
+              "RelativeToolTip": "CRM\\Controllers\\DashBoardController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T10:18:48.3Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "CRM\\Domain\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\Entities\\User.cs",
+              "RelativeToolTip": "CRM\\Domain\\Entities\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T16:32:36.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "CRM\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Services\\UserService.cs",
+              "RelativeToolTip": "CRM\\Services\\UserService.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAQwGYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T16:36:51.348Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "RefreshTokenRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Repositories\\RefreshTokenRepository.cs",
+              "RelativeDocumentMoniker": "CRM\\Infrastructure\\Repositories\\RefreshTokenRepository.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Repositories\\RefreshTokenRepository.cs",
+              "RelativeToolTip": "CRM\\Infrastructure\\Repositories\\RefreshTokenRepository.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAuwAYAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T16:50:13.515Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "TokenDto.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\DTO\\TokenDto.cs",
+              "RelativeDocumentMoniker": "CRM\\Domain\\DTO\\TokenDto.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\DTO\\TokenDto.cs",
+              "RelativeToolTip": "CRM\\Domain\\DTO\\TokenDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T16:52:58.667Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "TrashController.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Controllers\\TrashController.cs",
+              "RelativeDocumentMoniker": "CRM\\Controllers\\TrashController.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Controllers\\TrashController.cs",
+              "RelativeToolTip": "CRM\\Controllers\\TrashController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-05T11:28:35.101Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "BookingController.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Controllers\\BookingController.cs",
+              "RelativeDocumentMoniker": "CRM\\Controllers\\BookingController.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Controllers\\BookingController.cs",
+              "RelativeToolTip": "CRM\\Controllers\\BookingController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T14:42:58.598Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Program.cs",
+              "RelativeDocumentMoniker": "CRM\\Program.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Program.cs",
+              "RelativeToolTip": "CRM\\Program.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAqwEcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T14:48:11.894Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\appsettings.json",
+              "RelativeDocumentMoniker": "CRM\\appsettings.json",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\appsettings.json",
+              "RelativeToolTip": "CRM\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-01T06:31:20.929Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "BookingConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Configurations\\BookingConfiguration.cs",
+              "RelativeDocumentMoniker": "CRM\\Infrastructure\\Configurations\\BookingConfiguration.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Configurations\\BookingConfiguration.cs",
+              "RelativeToolTip": "CRM\\Infrastructure\\Configurations\\BookingConfiguration.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAzwAoAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T16:34:19.274Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "CRM\\Infrastructure\\Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "CRM\\Infrastructure\\Repositories\\UserRepository.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAiwBMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T16:37:34.825Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "LoginDto.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\DTO\\LoginDto.cs",
+              "RelativeDocumentMoniker": "CRM\\Domain\\DTO\\LoginDto.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\DTO\\LoginDto.cs",
+              "RelativeToolTip": "CRM\\Domain\\DTO\\LoginDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T10:57:14.572Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "DeviceLifecycleFlags.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\Enums\\DeviceLifecycleFlags.cs",
+              "RelativeDocumentMoniker": "CRM\\Domain\\Enums\\DeviceLifecycleFlags.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\Enums\\DeviceLifecycleFlags.cs",
+              "RelativeToolTip": "CRM\\Domain\\Enums\\DeviceLifecycleFlags.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T19:26:54.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "DashboardDto.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\DTO\\DashboardDto.cs",
+              "RelativeDocumentMoniker": "CRM\\Domain\\DTO\\DashboardDto.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\DTO\\DashboardDto.cs",
+              "RelativeToolTip": "CRM\\Domain\\DTO\\DashboardDto.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAswBEAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T10:20:47.911Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "DashBoardService.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Services\\DashBoardService.cs",
+              "RelativeDocumentMoniker": "CRM\\Services\\DashBoardService.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Services\\DashBoardService.cs",
+              "RelativeToolTip": "CRM\\Services\\DashBoardService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T10:19:39.788Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "StatusChangeDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\DTO\\StatusChangeDTO.cs",
+              "RelativeDocumentMoniker": "CRM\\Domain\\DTO\\StatusChangeDTO.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\DTO\\StatusChangeDTO.cs",
+              "RelativeToolTip": "CRM\\Domain\\DTO\\StatusChangeDTO.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAkwAoAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T07:35:37.44Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "BookDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\DTO\\BookDTO.cs",
+              "RelativeDocumentMoniker": "CRM\\Domain\\DTO\\BookDTO.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\DTO\\BookDTO.cs",
+              "RelativeToolTip": "CRM\\Domain\\DTO\\BookDTO.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAwwA0AAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T07:28:53.342Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "DeviceDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\DTO\\DeviceDTO.cs",
+              "RelativeDocumentMoniker": "CRM\\Domain\\DTO\\DeviceDTO.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\DTO\\DeviceDTO.cs",
+              "RelativeToolTip": "CRM\\Domain\\DTO\\DeviceDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T07:23:42.813Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "DeviceTypeStatus.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\Enums\\DeviceTypeStatus.cs",
+              "RelativeDocumentMoniker": "CRM\\Domain\\Enums\\DeviceTypeStatus.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\Enums\\DeviceTypeStatus.cs",
+              "RelativeToolTip": "CRM\\Domain\\Enums\\DeviceTypeStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-06T10:13:13.915Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "TrashRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Repositories\\TrashRepository.cs",
+              "RelativeDocumentMoniker": "CRM\\Infrastructure\\Repositories\\TrashRepository.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Repositories\\TrashRepository.cs",
+              "RelativeToolTip": "CRM\\Infrastructure\\Repositories\\TrashRepository.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAwwAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-05T11:30:44.784Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "TrashService.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Services\\TrashService.cs",
+              "RelativeDocumentMoniker": "CRM\\Services\\TrashService.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Services\\TrashService.cs",
+              "RelativeToolTip": "CRM\\Services\\TrashService.cs",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAiwIwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-05T11:29:41.283Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "ChangeOperation.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\Enums\\ChangeOperation.cs",
+              "RelativeDocumentMoniker": "CRM\\Domain\\Enums\\ChangeOperation.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\Enums\\ChangeOperation.cs",
+              "RelativeToolTip": "CRM\\Domain\\Enums\\ChangeOperation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-05T09:28:27.771Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "BookingStatus.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\Enums\\BookingStatus.cs",
+              "RelativeDocumentMoniker": "CRM\\Domain\\Enums\\BookingStatus.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\Enums\\BookingStatus.cs",
+              "RelativeToolTip": "CRM\\Domain\\Enums\\BookingStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-05T09:28:06.929Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "TrashBinElement.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\Entities\\TrashBinElement.cs",
+              "RelativeDocumentMoniker": "CRM\\Domain\\Entities\\TrashBinElement.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\Entities\\TrashBinElement.cs",
+              "RelativeToolTip": "CRM\\Domain\\Entities\\TrashBinElement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-05T09:04:28.847Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "EntityChangeSetRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Repositories\\EntityChangeSetRepository.cs",
+              "RelativeDocumentMoniker": "CRM\\Infrastructure\\Repositories\\EntityChangeSetRepository.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Repositories\\EntityChangeSetRepository.cs",
+              "RelativeToolTip": "CRM\\Infrastructure\\Repositories\\EntityChangeSetRepository.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAYwBAAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-05T09:00:43.848Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "StageResult .cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\Enums\\StageResult .cs",
+              "RelativeDocumentMoniker": "CRM\\Domain\\Enums\\StageResult .cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\Enums\\StageResult .cs",
+              "RelativeToolTip": "CRM\\Domain\\Enums\\StageResult .cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T07:51:48.659Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "DeviceStatusHistory.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\Entities\\DeviceStatusHistory.cs",
+              "RelativeDocumentMoniker": "CRM\\Domain\\Entities\\DeviceStatusHistory.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\Entities\\DeviceStatusHistory.cs",
+              "RelativeToolTip": "CRM\\Domain\\Entities\\DeviceStatusHistory.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAAAsAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T07:21:34.945Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "EntityChangeSet.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\Entities\\EntityChangeSet.cs",
+              "RelativeDocumentMoniker": "CRM\\Domain\\Entities\\EntityChangeSet.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\Entities\\EntityChangeSet.cs",
+              "RelativeToolTip": "CRM\\Domain\\Entities\\EntityChangeSet.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T07:10:52.85Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "EntityChange.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\Entities\\EntityChange.cs",
+              "RelativeDocumentMoniker": "CRM\\Domain\\Entities\\EntityChange.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\Entities\\EntityChange.cs",
+              "RelativeToolTip": "CRM\\Domain\\Entities\\EntityChange.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T07:10:43.374Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "Booking.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\Entities\\Booking.cs",
+              "RelativeDocumentMoniker": "CRM\\Domain\\Entities\\Booking.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\Entities\\Booking.cs",
+              "RelativeToolTip": "CRM\\Domain\\Entities\\Booking.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T22:31:14.791Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "BookingService.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Services\\BookingService.cs",
+              "RelativeDocumentMoniker": "CRM\\Services\\BookingService.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Services\\BookingService.cs",
+              "RelativeToolTip": "CRM\\Services\\BookingService.cs",
+              "ViewState": "AgIAAKIAAAAAAAAAAAAiwLwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T14:43:13.541Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "BookingRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Repositories\\BookingRepository.cs",
+              "RelativeDocumentMoniker": "CRM\\Infrastructure\\Repositories\\BookingRepository.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Repositories\\BookingRepository.cs",
+              "RelativeToolTip": "CRM\\Infrastructure\\Repositories\\BookingRepository.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwAMAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T14:26:16.809Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "DeviceRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Repositories\\DeviceRepository.cs",
+              "RelativeDocumentMoniker": "CRM\\Infrastructure\\Repositories\\DeviceRepository.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Infrastructure\\Repositories\\DeviceRepository.cs",
+              "RelativeToolTip": "CRM\\Infrastructure\\Repositories\\DeviceRepository.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAuwA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-26T06:50:12.613Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "Device.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\Entities\\Device.cs",
+              "RelativeDocumentMoniker": "CRM\\Domain\\Entities\\Device.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\Entities\\Device.cs",
+              "RelativeToolTip": "CRM\\Domain\\Entities\\Device.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T08:11:22.705Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "DeviceStatus.cs",
+              "DocumentMoniker": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\Enums\\DeviceStatus.cs",
+              "RelativeDocumentMoniker": "CRM\\Domain\\Enums\\DeviceStatus.cs",
+              "ToolTip": "C:\\Users\\Honor\\source\\repos\\CRM\\CRM\\Domain\\Enums\\DeviceStatus.cs",
+              "RelativeToolTip": "CRM\\Domain\\Enums\\DeviceStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T08:12:42.506Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
