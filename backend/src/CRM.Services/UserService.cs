@@ -1,5 +1,5 @@
 ﻿namespace CRM.Services;
-
+using Microsoft.Extensions.Configuration;
 using CRM.Domain.Entities;
 using CRM.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;

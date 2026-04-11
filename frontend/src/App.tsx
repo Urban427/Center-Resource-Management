@@ -44,11 +44,11 @@ export default function App() {
 
   if (!isAuth) {
     return <Login
-        onLogin={(user) => {
-          setUser(user);
-          setIsAuth(true);
-        }} 
-      />;
+      onLogin={(user) => {
+        setUser(user);
+        setIsAuth(true);
+      }}
+    />;
   }
 
   return (
@@ -65,7 +65,7 @@ export default function App() {
       <TopBar
         user={user}
         onLogout={() => {
-          localStorage.removeItem("token");
+          localStorage.removeItem("accessToken");
           localStorage.removeItem("user");
           setUser(null);
           setIsAuth(false);
@@ -82,7 +82,7 @@ export default function App() {
       />
 
       {/* -------- BODY -------- */}
-      <div style={{ display: "flex", flex: 1, minHeight: 0, overflow: "hidden"}}>
+      <div style={{ display: "flex", flex: 1, minHeight: 0, overflow: "hidden" }}>
         <Sidebar
           view={view}
           setView={setView}
@@ -99,13 +99,13 @@ export default function App() {
             flexDirection: "column"
           }}
         >
-          {view === "dashboard"   && <Dashboard/>}
-          {view === "device"      && <DeviceSelector/>}
-          {view === "deviceType"  && <DeviceTypePanel/>}
-          {view === "booking"     && <BookingComponent/>}
-          {view === "tests"       && <TestComponent/>}
-          {view === "trash"       && <TrashComponent/>}
-          {view === "users"       && <UsersComponent/>}
+          {view === "dashboard" && <Dashboard />}
+          {view === "device" && <DeviceSelector />}
+          {view === "deviceType" && <DeviceTypePanel />}
+          {view === "booking" && <BookingComponent />}
+          {view === "tests" && <TestComponent />}
+          {view === "trash" && <TrashComponent />}
+          {view === "users" && <UsersComponent />}
         </div>
       </div>
 
