@@ -28,3 +28,7 @@ jobs:
 
       - name: Test
         run: dotnet test --no-build --configuration Release
+
+    env:
+      ConnectionStrings__DefaultConnection: ${{ secrets.DB_CONNECTION }}
+      Jwt__Key: ${{ secrets.KEY }}
