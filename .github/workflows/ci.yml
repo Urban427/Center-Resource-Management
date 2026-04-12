@@ -1,11 +1,12 @@
 name: CI
-
 on:
   push:
     branches: [ "master", "develop" ]
   pull_request:
     branches: [ "master" ]
-
+defaults:
+      run:
+        working-directory: backend
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
@@ -20,10 +21,10 @@ jobs:
           dotnet-version: 8.0.x
 
       - name: Restore
-        run: ./backend/dotnet restore
+        run: dotnet restore
 
       - name: Build
-        run: ./backend/dotnet build --no-restore --configuration Release
+        run: dotnet build --no-restore --configuration Release
 
       - name: Test
-        run: ./backend/dotnet test --no-build --configuration Release
+        run: dotnet test --no-build --configuration Release
