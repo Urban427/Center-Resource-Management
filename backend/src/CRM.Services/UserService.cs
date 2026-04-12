@@ -8,17 +8,21 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
+using CRM.Domain.DTO;
 
 public class UserService
 {
+    private readonly IRefreshTokenRepository _refreshTokenRepository;
     private readonly IUserRepository _users;
     private readonly IUnitOfWork _uow;
     private readonly IConfiguration _config;
     public UserService(
+        IRefreshTokenRepository refreshTokenRepository,
         IUserRepository users,
         IUnitOfWork uow,
         IConfiguration config)
     {
+        _refreshTokenRepository = refreshTokenRepository;
         _uow = uow;
         _users = users;
         _config = config;
@@ -93,12 +97,63 @@ public class UserService
 
         return new JwtSecurityTokenHandler().WriteToken(token);
     }
-
     public string GenerateRefreshToken()
     {
         var randomBytes = new byte[32];
         using var rng = RandomNumberGenerator.Create();
         rng.GetBytes(randomBytes);
         return Convert.ToBase64String(randomBytes);
+    }
+    public async Task<object?> RefreshToken(string refreshToken)
+    {
+        var token = await _refreshTokenRepository.GetByToken(refreshToken);
+        if (token == null || token.IsRevoked || token.ExpiryTime<DateTime.UtcNow)
+            return null;
+
+        var user = await _users.GetById(token.UserId);
+        var newAccessToken = GenerateJwtToken(user);
+        var newRefreshToken = GenerateRefreshToken();
+        token.IsRevoked = true;
+            var newTokenEntity = new RefreshToken
+            {
+                Token = newRefreshToken,
+                ExpiryTime = DateTime.UtcNow.AddDays(1),
+                UserId = user.Id
+            };
+
+        await _refreshTokenRepository.AddAsync(newTokenEntity);
+        await _uow.SaveChangesAsync();
+        return new
+        {
+            accessToken = newAccessToken,
+            refreshToken = newRefreshToken
+        };
+    }
+
+
+    public async Task<object?> Login(LoginDto dto)
+    {
+        var user = await Authenticate(dto.Username);
+        if (user == null)
+            return null;
+
+        var accessToken = GenerateJwtToken(user);
+        var refreshToken = GenerateRefreshToken();
+
+        var refreshTokenEntity = new RefreshToken
+        {
+            Token = refreshToken,
+            ExpiryTime = DateTime.UtcNow.AddDays(1),
+            UserId = user.Id,
+            IsRevoked = false
+        };
+        await _refreshTokenRepository.AddAsync(refreshTokenEntity);
+        await _uow.SaveChangesAsync();
+        return new
+        {
+            accessToken,
+            refreshToken,
+            user
+        };
     }
 }

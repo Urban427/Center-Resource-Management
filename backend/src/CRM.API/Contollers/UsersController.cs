@@ -14,18 +14,11 @@ using Microsoft.AspNetCore.Mvc;
 public class UsersController : ControllerBase
 {
     private readonly UserService _userService;
-    private readonly IRefreshTokenRepository _refreshTokenRepository;
-    private readonly IUnitOfWork _uow;
 
     public UsersController(
-        UserService userService,
-        IUnitOfWork uow,
-        IRefreshTokenRepository refreshTokenRepository
-    )
-    {
+        UserService userService
+    ) {
         _userService = userService;
-        _uow = uow;
-        _refreshTokenRepository = refreshTokenRepository;
     }
 
     // GET: api/users
@@ -81,62 +74,23 @@ public class UsersController : ControllerBase
     [AllowAnonymous]
     public async Task<IActionResult> Login([FromBody] LoginDto dto)
     {
-        var user = await _userService.Authenticate(dto.Username);
+        var result = await _userService.Login(dto);
 
-        if (user == null)
+        if (result == null)
             return Unauthorized();
 
-        var accessToken = _userService.GenerateJwtToken(user);
-        var refreshToken = _userService.GenerateRefreshToken();
-
-        var refreshTokenEntity = new RefreshToken
-        {
-            Token = refreshToken,
-            ExpiryTime = DateTime.UtcNow.AddDays(1),
-            UserId = user.Id,
-            IsRevoked = false
-        };
-
-        await _refreshTokenRepository.AddAsync(refreshTokenEntity);
-        await _uow.SaveChangesAsync();
-
-        return Ok(new
-        {
-            accessToken,
-            refreshToken,
-            user
-        });
+        return Ok(result);
     }
 
     [HttpPost("refresh")]
     [AllowAnonymous]
     public async Task<IActionResult> Refresh([FromBody] TokenDto dto)
     {
-        var token = await _refreshTokenRepository.GetByToken(dto.RefreshToken);
+        var result = await _userService.RefreshToken(dto.RefreshToken);
 
-        if (token == null || token.IsRevoked || token.ExpiryTime < DateTime.UtcNow)
+        if (result == null)
             return Unauthorized();
 
-        var user = await _userService.GetById(token.UserId);
-
-        var newAccessToken = _userService.GenerateJwtToken(user);
-        var newRefreshToken = _userService.GenerateRefreshToken();
-
-        token.IsRevoked = true;
-        var newTokenEntity = new RefreshToken
-        {
-            Token = newRefreshToken,
-            ExpiryTime = DateTime.UtcNow.AddDays(1),
-            UserId = user.Id
-        };
-
-        await _refreshTokenRepository.AddAsync(newTokenEntity);
-        await _uow.SaveChangesAsync();
-
-        return Ok(new
-        {
-            accessToken = newAccessToken,
-            refreshToken = newRefreshToken
-        });
+        return Ok(result);
     }
 }

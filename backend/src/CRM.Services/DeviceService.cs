@@ -285,15 +285,14 @@ public class DeviceService
     public async Task SoftDelete(Guid deviceId, string? user, string? reason = null)
     {
         // 1. Get the device
-        var device = await _devices.GetByIdAsync(deviceId)
-                     ?? throw new InvalidOperationException("Device not found");
+        var device = await _devices.GetByIdAsync(deviceId) ?? throw new InvalidOperationException("Device not found");
 
         // 2. Store old status for history
         var oldStatus = device.Status;
         var oldStage = device.StageResult;
 
         // 3. Mark device as deleted
-        device.Status = DeviceStatus.Deleted; // Add Deleted to your enum if not exists
+        device.Status = DeviceStatus.Deleted;
         device.UpdatedAt = DateTime.UtcNow;
 
         // 4. Add entity change set
