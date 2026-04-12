@@ -1,3 +1,4 @@
+using CRM.Domain.Abstractions;
 using CRM.Infrastructure.Persistence;
 using CRM.Infrastructure.Repositories;
 using CRM.Services;
@@ -12,14 +13,16 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add repositories
-builder.Services.AddScoped<BookingRepository>();
-builder.Services.AddScoped<DeviceRepository>();
-builder.Services.AddScoped<DeviceStatusHistoryRepository>();
-builder.Services.AddScoped<DeviceTypeRepository>();
-builder.Services.AddScoped<EntityChangeSetRepository>();
-builder.Services.AddScoped<RefreshTokenRepository>();
-builder.Services.AddScoped<TrashRepository>();
-builder.Services.AddScoped<UserRepository>();
+builder.Services.AddScoped<IBookingRepository, BookingRepository>();
+builder.Services.AddScoped<IDeviceRepository, DeviceRepository>();
+builder.Services.AddScoped<IDeviceStatusHistoryRepository, DeviceStatusHistoryRepository>();
+builder.Services.AddScoped<IDeviceTypeRepository, DeviceTypeRepository>();
+builder.Services.AddScoped<IEntityChangeSetRepository, EntityChangeSetRepository>();
+builder.Services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
+builder.Services.AddScoped<ITrashRepository, TrashRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IEntityTypeRegistry, EntityTypeRegistry>();
 
 // Add services
 builder.Services.AddScoped<BookingService>();

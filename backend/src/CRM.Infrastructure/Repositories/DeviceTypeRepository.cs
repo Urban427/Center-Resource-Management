@@ -1,16 +1,17 @@
 ﻿namespace CRM.Infrastructure.Repositories;
 using CRM.Domain.Entities;
 using CRM.Domain.Enums;
+using CRM.Domain.Abstractions;
 using CRM.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
-public class DeviceTypeRepository : RepositoryBase
+public class DeviceTypeRepository : RepositoryBase, IDeviceTypeRepository
 {
     public DeviceTypeRepository(AppDbContext context) : base(context) { }
 
-    public async Task AddAsync(DeviceType deviceType)
+    public Task AddAsync(DeviceType deviceType)
     {
         _context.DeviceTypes.Add(deviceType);
-        await _context.SaveChangesAsync();
+        return Task.CompletedTask;
     }
 
     public async Task<List<DeviceType>> GetRangeAsync(int skip, int take)
@@ -22,10 +23,10 @@ public class DeviceTypeRepository : RepositoryBase
             .Take(take)
             .ToListAsync();
     }
-    public async Task UpdateAsync(DeviceType deviceType)
+    public Task UpdateAsync(DeviceType deviceType)
     {
         _context.DeviceTypes.Update(deviceType);
-        await _context.SaveChangesAsync();
+        return Task.CompletedTask;
     }
     public async Task<DeviceType?> GetByIdAsync(int id)
     {
@@ -45,5 +46,9 @@ public class DeviceTypeRepository : RepositoryBase
             .OrderBy(d => d.Id)
             .Take(limit)
             .ToListAsync();
+    }
+    public IQueryable<DeviceType> Query()
+    {
+        return _context.DeviceTypes.AsQueryable();
     }
 }

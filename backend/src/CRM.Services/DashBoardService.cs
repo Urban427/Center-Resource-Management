@@ -1,23 +1,30 @@
 ﻿using CRM.Domain.DTO;
 using CRM.Domain.Enums;
-using CRM.Infrastructure.Repositories;
+using CRM.Domain.Abstractions;
 using Microsoft.EntityFrameworkCore;
+using CRM.Domain.Entities;
 
 namespace CRM.Services
 {
     public class DashBoardService
     {
-        private readonly BookingRepository _bookingRepo;
-        private readonly EntityChangeSetRepository _historyRepo;
-        private readonly DeviceRepository _deviceRepo;
-        private readonly TrashRepository _trash;
+        private readonly IBookingRepository _bookingRepo;
+        private readonly IEntityChangeSetRepository _historyRepo;
+        private readonly IDeviceRepository _deviceRepo;
+        private readonly IDeviceTypeRepository _deviceTypeRepo;
+        private readonly IDeviceStatusHistoryRepository _deviceStatusHistory;
+        private readonly ITrashRepository _trash;
 
         public DashBoardService(
-            BookingRepository bookingRepo,
-            EntityChangeSetRepository historyRepo,
-            TrashRepository trash,
-            DeviceRepository deviceRepo)
+            IBookingRepository bookingRepo,
+            IEntityChangeSetRepository historyRepo,
+            IDeviceTypeRepository deviceTypeRepo,
+            IDeviceStatusHistoryRepository deviceStatusHistory,
+            ITrashRepository trash,
+            IDeviceRepository deviceRepo)
         {
+            _deviceStatusHistory = deviceStatusHistory;
+            _deviceTypeRepo = deviceTypeRepo;
             _bookingRepo = bookingRepo;
             _historyRepo = historyRepo;
             _deviceRepo = deviceRepo;
@@ -26,28 +33,15 @@ namespace CRM.Services
 
         public async Task<DashboardDto> GetDashboardData()
         {
-            // --- Get all devices ---
-            var totalDevices = await _deviceRepo.Context.Devices.CountAsync(b => b.Status != DeviceStatus.Deleted);
 
-            // --- Get all bookings ---
-            var totalBookings = await _bookingRepo.Context.Bookings.CountAsync(b => b.Status != BookingStatus.Deleted);
+            var totalDevices = await _deviceRepo.Query().CountAsync(b => b.Status != DeviceStatus.Deleted);
+            var totalBookings = await _bookingRepo.Query().CountAsync(b => b.Status != BookingStatus.Deleted);
+            var deletedBookings = await _bookingRepo.Query().CountAsync(b => b.Status == BookingStatus.Deleted);
+            var totalDeviceTypes = await _deviceTypeRepo.Query().CountAsync();
+            var totalTests = await _deviceStatusHistory.Query().Where(h => h.NewStatus == DeviceStatus.Testing).CountAsync();
+            var totalDeleted = await _trash.Query().CountAsync();
 
-            // --- Get deleted bookings count ---
-            var deletedBookings = await _bookingRepo.Context.Bookings.CountAsync(b => b.Status == BookingStatus.Deleted);
-
-            // --- Get total device types ---
-            var totalDeviceTypes = await _bookingRepo.Context.DeviceTypes.CountAsync();
-
-            // --- Get total tests ---
-            var totalTests = await _historyRepo.Context.DeviceStatusHistories
-                .Where(h => h.NewStatus == DeviceStatus.Testing)
-                .CountAsync();
-
-            // --- Get deleted entities ---
-            var totalDeleted = await _trash.Context.TrashBinElements.CountAsync();
-
-            // --- Devices by type ---
-            var devicesByType = await _deviceRepo.Context.Devices
+            var devicesByType = await _deviceRepo.Query()
                 .GroupBy(d => d.DeviceType.Name)
                 .Select(g => new NameCountDto
                 {
@@ -57,7 +51,7 @@ namespace CRM.Services
                 .ToListAsync();
 
             // --- Bookings by type ---
-            var bookingsByType = await _bookingRepo.Context.Bookings
+            var bookingsByType = await _bookingRepo.Query()
                 .Where(b => b.Status != BookingStatus.Deleted)
                 .GroupBy(b => b.DeviceType.Name)
                 .Select(g => new NameCountDto
@@ -68,7 +62,7 @@ namespace CRM.Services
                 .ToListAsync();
 
             // --- Deleted by entity ---
-            var deletedByEntity = await _trash.Context.TrashBinElements
+            var deletedByEntity = await _trash.Query()
                 .GroupBy(t => t.EntityName)
                 .Select(g => new NameCountDto
                 {

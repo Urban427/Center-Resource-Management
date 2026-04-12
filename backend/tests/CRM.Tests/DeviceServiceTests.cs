@@ -1,24 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Moq;
+using Xunit;
+using CRM.Services;
 using CRM.Domain.Entities;
 using CRM.Domain.Enums;
 using CRM.Infrastructure.Repositories;
-using CRM.Services;
-using Moq;
-
 
 namespace CRM.Tests;
+
 public class DeviceServiceTests
 {
-    public DeviceServiceTests() {}
-
     [Fact]
     public async Task ApplyStatusChange_ShouldThrow_WhenTestingWithoutRegisteredFlag()
     {
-        var service = new DeviceService(null!, null!, null!, null!);
+        var deviceRepo = new Mock<DeviceRepository>();
+        var historyRepo = new Mock<EntityChangeSetRepository>();
+        var trashRepo = new Mock<TrashRepository>();
+        var statusHistoryRepo = new Mock<DeviceStatusHistoryRepository>();
+        var uow = new Mock<UnitOfWork>();
+
+        var service = new DeviceService(
+            uow.Object,
+            deviceRepo.Object,
+            historyRepo.Object,
+            trashRepo.Object,
+            statusHistoryRepo.Object
+        );
 
         var device = new Device
         {

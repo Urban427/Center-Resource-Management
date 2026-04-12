@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CRM.Domain\CRM.Domain.csproj" />
+    <ProjectReference Include="..\CRM.Infrastructure\CRM.Infrastructure.csproj" />
     <ProjectReference Include="..\CRM.Services\CRM.Services.csproj" />
   </ItemGroup>
 

@@ -1,8 +1,10 @@
 ﻿using CRM.Domain.Entities;
 using CRM.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
+using CRM.Domain.Abstractions;
+
 namespace CRM.Infrastructure.Repositories;
-public class EntityChangeSetRepository : RepositoryBase
+public class EntityChangeSetRepository : RepositoryBase, IEntityChangeSetRepository
 {
     public EntityChangeSetRepository(AppDbContext db) : base(db) { }
 
@@ -35,5 +37,9 @@ public class EntityChangeSetRepository : RepositoryBase
             return;
 
         _context.EntityChangeSets.Remove(entity);
+    }
+    public IQueryable<EntityChangeSet> Query()
+    {
+        return _context.EntityChangeSets.AsQueryable();
     }
 }

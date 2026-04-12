@@ -1,24 +1,28 @@
 ﻿using CRM.Domain.DTO;
 using CRM.Domain.Entities;
 using CRM.Domain.Enums;
-using CRM.Infrastructure.Repositories;
+using CRM.Domain.Abstractions;
 using Microsoft.EntityFrameworkCore;
 namespace CRM.Services;
 
 public class BookingService
 {
-    private readonly BookingRepository _bookingRepo;
-    private readonly EntityChangeSetRepository _historyRepo;
+    private readonly IBookingRepository _bookingRepo;
+    private readonly IUnitOfWork _uow;
+    private readonly IEntityChangeSetRepository _historyRepo;
+    private readonly ITrashRepository _trash;
+
     private readonly DeviceService _deviceService;
-    private readonly TrashRepository _trash;
 
 
     public BookingService(
-        BookingRepository bookingRepo,
-        EntityChangeSetRepository historyRepo,
-        TrashRepository trash,
+        IUnitOfWork uow,
+        IBookingRepository bookingRepo,
+        IEntityChangeSetRepository historyRepo,
+        ITrashRepository trash,
         DeviceService deviceService)
     {
+        _uow = uow;
         _bookingRepo = bookingRepo;
         _historyRepo = historyRepo;
         _deviceService = deviceService;
@@ -27,7 +31,7 @@ public class BookingService
     public async Task<(List<BookDTO> Items, int Total)> GetBooksPaged(
         int skip, int take, string? sort, string? order, string? searchTerm)
     {
-        var query = _bookingRepo.Context.Bookings.AsQueryable();
+        var query = _bookingRepo.Query().AsNoTracking();
 
         query = query.Where(d => d.Status != BookingStatus.Deleted);
 
@@ -82,106 +86,109 @@ public class BookingService
 
     public async Task RegisterBookingAsync(Booking booking, string? user)
     {
-        using var tx = await _bookingRepo.BeginTransactionAsync();
-
-        // 1. Save booking
-        await _bookingRepo.AddAsync(booking);
-        await _bookingRepo.SaveChangesAsync();
-
-        // 2. Create devices
-        var devicesToCreate = Enumerable.Range(0, booking.NumberOfDevices)
-           .Select(_ => new Device
-           {
-               Id = Guid.NewGuid(),
-               DeviceTypeId = booking.DeviceTypeId,
-               BookingId = booking.Id,
-               Checked = DeviceLifecycleFlags.None,
-               Status = DeviceStatus.None,
-               StageResult = StageResult.None,
-               CreatedAt = DateTime.UtcNow
-           }).ToList();
-
-        // 3. Delegate saving & history to DeviceService
-        var createdDevices = await _deviceService.RegisterDevicesWithHistory(devicesToCreate, user);
-
-        var bookingChangeSet = new EntityChangeSet
+        await _uow.BeginTransactionAsync();
+        try
         {
-            EntityName = nameof(Booking),
-            EntityId = booking.Id.ToString(),
-            Operation = ChangeOperation.Create,
-            ChangedBy = user,
-            Comment = $"Booking created with {createdDevices.Count} devices"
-        };
-        bookingChangeSet.Changes.Add(new EntityChange
+
+            // 1. Save booking
+            await _bookingRepo.AddAsync(booking);
+
+            // 2. Create devices
+            var devicesToCreate = Enumerable.Range(0, booking.NumberOfDevices)
+               .Select(_ => new Device
+               {
+                   Id = Guid.NewGuid(),
+                   DeviceTypeId = booking.DeviceTypeId,
+                   BookingId = booking.Id,
+                   Checked = DeviceLifecycleFlags.None,
+                   Status = DeviceStatus.None,
+                   StageResult = StageResult.None,
+                   CreatedAt = DateTime.UtcNow
+               }).ToList();
+
+            // 3. Delegate saving & history to DeviceService
+            var createdDevices = await _deviceService.RegisterDevicesWithHistory(devicesToCreate, user);
+
+            var bookingChangeSet = new EntityChangeSet
+            {
+                EntityName = nameof(Booking),
+                EntityId = booking.Id.ToString(),
+                Operation = ChangeOperation.Create,
+                ChangedBy = user,
+                Comment = $"Booking created with {createdDevices.Count} devices"
+            };
+            bookingChangeSet.Changes.Add(new EntityChange
+            {
+                PropertyName = nameof(Booking.NumberOfDevices),
+                OldValue = null,
+                NewValue = booking.NumberOfDevices.ToString()
+            });
+
+            await _historyRepo.AddAsync(bookingChangeSet);
+            await _uow.SaveChangesAsync();
+            await _uow.CommitAsync();
+        }
+        catch
         {
-            PropertyName = nameof(Booking.NumberOfDevices),
-            OldValue = null,
-            NewValue = booking.NumberOfDevices.ToString()
-        });
-
-        await _historyRepo.AddAsync(bookingChangeSet);
-        await _historyRepo.SaveChangesAsync();
-
-        await tx.CommitAsync();
-    }
-
-    public async Task<List<Booking>> GetRange(int from, int to)
-    {
-        if (from < 0 || to <= from) throw new ArgumentException("Invalid range");
-        int count = to - from;
-        return await _bookingRepo.GetRangeAsync(from, count);
+            await _uow.RollbackAsync();
+            throw;
+        }
     }
     public async Task SoftDelete(int bookId, string? user, string? reason = null)
     {
-        // 1. Get the book
-        var booking = await _bookingRepo.GetByIdAsync(bookId)
+        await _uow.BeginTransactionAsync();
+        try
+        {
+            var booking = await _bookingRepo.GetByIdAsync(bookId)
                      ?? throw new InvalidOperationException("Device not found");
 
-        // 2. Store old status for history
-        var oldStatus = booking.Status;
+            // 2. Store old status for history
+            var oldStatus = booking.Status;
 
-        // 3. Mark book as deleted
-        booking.Status = BookingStatus.Deleted;
+            // 3. Mark book as deleted
+            booking.Status = BookingStatus.Deleted;
 
-        // 4. Add entity change set
-        var changeSet = new EntityChangeSet
+            // 4. Add entity change set
+            var changeSet = new EntityChangeSet
+            {
+                EntityName = "Booking",
+                EntityId = booking.Id.ToString(),
+                Operation = ChangeOperation.Delete,
+                ChangedBy = user,
+                Comment = reason ?? "Device soft deleted"
+            };
+            changeSet.Changes.Add(new EntityChange
+            {
+                PropertyName = "Status",
+                OldValue = oldStatus.ToString(),
+                NewValue = booking.Status.ToString()
+            });
+
+            await _historyRepo.AddAsync(changeSet);
+
+            //AddTrashBinElement
+            var trashBinElement = new TrashBinElement
+            {
+                EntityName = "Booking",
+                EntityKey = booking.Id.ToString(),
+                PreviousStatus = oldStatus.ToString(),
+                DeletedAt = DateTime.UtcNow,
+                ExpiresAt = DateTime.UtcNow.AddDays(30),
+                DeletedBy = user,
+                Reason = reason,
+            };
+
+            await _trash.AddAsync(trashBinElement);
+
+            // 6. Update book
+            await _bookingRepo.UpdateAsync(booking);
+            await _uow.SaveChangesAsync();
+            await _uow.CommitAsync();
+        }
+        catch
         {
-            EntityName = "Booking",
-            EntityId = booking.Id.ToString(),
-            Operation = ChangeOperation.Delete,
-            ChangedBy = user,
-            Comment = reason ?? "Device soft deleted"
-        };
-        changeSet.Changes.Add(new EntityChange
-        {
-            PropertyName = "Status",
-            OldValue = oldStatus.ToString(),
-            NewValue = booking.Status.ToString()
-        });
-
-        await _historyRepo.AddAsync(changeSet);
-
-        //AddTrashBinElement
-        var trashBinElement = new TrashBinElement
-        {
-            EntityName = "Booking",
-            EntityKey = booking.Id.ToString(),
-            PreviousStatus = oldStatus.ToString(),
-            DeletedAt = DateTime.UtcNow,
-            ExpiresAt = DateTime.UtcNow.AddDays(30),
-            DeletedBy = user,
-            Reason = reason,
-        };
-
-        await _trash.AddAsync(trashBinElement);
-
-        // 6. Update book
-        await _bookingRepo.UpdateAsync(booking);
-
-
-        // 7. Save all changes
-        await _bookingRepo.SaveChangesAsync();
-        await _trash.SaveChangesAsync();
-        await _historyRepo.SaveChangesAsync();
+            await _uow.RollbackAsync();
+            throw;
+        }
     }
 }

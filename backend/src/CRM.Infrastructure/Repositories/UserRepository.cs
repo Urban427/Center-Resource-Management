@@ -1,10 +1,11 @@
-﻿using CRM.Domain.Entities;
+﻿using CRM.Domain.Abstractions;
+using CRM.Domain.Entities;
 using CRM.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 
 namespace CRM.Infrastructure.Repositories;
 
-public class UserRepository : RepositoryBase
+public class UserRepository : RepositoryBase, IUserRepository
 {
     public UserRepository(AppDbContext db) : base(db) { }
     public async Task AddAsync(User user)
@@ -21,5 +22,9 @@ public class UserRepository : RepositoryBase
     {
         return await _context.Users
             .FirstOrDefaultAsync(u => u.Id == id);
+    }
+    public IQueryable<User> Query()
+    {
+        return _context.Users.AsQueryable();
     }
 }

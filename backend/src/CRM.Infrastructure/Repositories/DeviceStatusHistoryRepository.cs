@@ -1,9 +1,11 @@
 ﻿namespace CRM.Infrastructure.Repositories;
+
+using CRM.Domain.Abstractions;
 using CRM.Domain.Entities;
 using CRM.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 
-public class DeviceStatusHistoryRepository : RepositoryBase
+public class DeviceStatusHistoryRepository : RepositoryBase, IDeviceStatusHistoryRepository
 {
 
     public DeviceStatusHistoryRepository(AppDbContext context) : base(context) { }

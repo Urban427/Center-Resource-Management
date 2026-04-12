@@ -1,30 +1,36 @@
-﻿using CRM.Domain.Entities;
+﻿using CRM.Domain.Abstractions;
+using CRM.Domain.Entities;
 using CRM.Domain.Enums;
-using CRM.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace CRM.Services;
 
 public class TrashService
 {
-    private readonly TrashRepository _trash;
-    private readonly DeviceRepository _device;
-    private readonly DeviceTypeRepository _deviceType;
-    private readonly BookingRepository _booking;
-    private readonly EntityChangeSetRepository _history;
+    private readonly ITrashRepository _trash;
+    private readonly IDeviceRepository _device;
+    private readonly IDeviceTypeRepository _deviceType;
+    private readonly IBookingRepository _booking;
+    private readonly IEntityChangeSetRepository _history;
+    private readonly IEntityTypeRegistry _typeRegistry;
+    private readonly IUnitOfWork _uow;
 
     public TrashService(
-        TrashRepository trash,
-        DeviceRepository device,
-        DeviceTypeRepository deviceType,
-        BookingRepository booking,
-        EntityChangeSetRepository history)
+        ITrashRepository trash,
+        IDeviceRepository device,
+        IDeviceTypeRepository deviceType,
+        IBookingRepository booking,
+        IEntityChangeSetRepository history,
+        IUnitOfWork uow,
+        IEntityTypeRegistry typeRegistry)
     {
         _trash = trash;
         _device = device;
         _deviceType = deviceType;
         _booking = booking;
         _history = history;
+        _uow = uow;
+        _typeRegistry = typeRegistry;
     }
     public async Task<List<TrashBinElement>> GetRange(int from, int to)
     {
@@ -37,28 +43,15 @@ public class TrashService
         var trash = await _trash.GetByIdAsync(trashId);
         if (trash == null) throw new Exception("Trash item not found");
 
-        var entityType = _trash.Context.Model
-            .GetEntityTypes()
-            .FirstOrDefault(e => e.ClrType.Name == trash.EntityName);
+        var clrType = _typeRegistry.GetClrType(trash.EntityName);
+        var keyType = _typeRegistry.GetPrimaryKeyType(clrType);
 
-        if (entityType == null)
-            throw new Exception($"Unknown entity type {trash.EntityName}");
+        object keyValue = keyType == typeof(Guid)
+            ? Guid.Parse(trash.EntityKey)
+            : Convert.ChangeType(trash.EntityKey, keyType);
 
-        var keyProperty = entityType.FindPrimaryKey()!.Properties.Single();
-        var clrType = entityType.ClrType;
-        object keyValue;
-
-        if (keyProperty.ClrType == typeof(Guid))
-        {
-            keyValue = Guid.Parse(trash.EntityKey);
-        }
-        else
-        {
-            keyValue = Convert.ChangeType(trash.EntityKey, keyProperty.ClrType);
-        }
-
-        var entity = await _trash.Context.FindAsync(clrType, keyValue);
-        if (entity == null) new Exception("Entity not found");
+        var entity = await _trash.FindEntityAsync(clrType, keyValue)
+            ?? throw new Exception("Entity not found");
 
         // Restore Status
         var statusProp = clrType.GetProperty("Status")
@@ -89,14 +82,13 @@ public class TrashService
         });
 
         await _trash.RemoveAsync(trash);
-        await _trash.Context.SaveChangesAsync();
-        await _history.Context.SaveChangesAsync();
+        await _uow.SaveChangesAsync();
     }
 
     public async Task<(List<TrashBinElement> Items, int Total)> GetTrashPaged(
         int skip, int take, string? sort, string? order, string? searchTerm)
     {
-        var query = _trash.Context.TrashBinElements.AsQueryable();
+        var query = _trash.Query().AsNoTracking();
 
         // Search
         if (!string.IsNullOrEmpty(searchTerm))

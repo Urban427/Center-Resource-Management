@@ -1,7 +1,7 @@
 ﻿namespace CRM.Services;
 using Microsoft.Extensions.Configuration;
 using CRM.Domain.Entities;
-using CRM.Infrastructure.Repositories;
+using CRM.Domain.Abstractions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -11,12 +11,15 @@ using System.Text;
 
 public class UserService
 {
-    private readonly UserRepository _users;
+    private readonly IUserRepository _users;
+    private readonly IUnitOfWork _uow;
     private readonly IConfiguration _config;
     public UserService(
-        UserRepository users,
+        IUserRepository users,
+        IUnitOfWork uow,
         IConfiguration config)
     {
+        _uow = uow;
         _users = users;
         _config = config;
     }
@@ -29,7 +32,7 @@ public class UserService
     public async Task<(List<User> Items, int Total)> GetUsersPaged(
        int skip, int take, string? sort, string? order, string? searchTerm)
     {
-        var query = _users.Context.Users.AsQueryable();
+        var query = _users.Query().AsNoTracking();
 
         // Search
         if (!string.IsNullOrEmpty(searchTerm))
@@ -58,7 +61,7 @@ public class UserService
             return;
         }
         await _users.AddAsync(newUser);
-        await _users.SaveChangesAsync();
+        await _uow.SaveChangesAsync();
     }
 
     public async Task<User?> Authenticate(String username)

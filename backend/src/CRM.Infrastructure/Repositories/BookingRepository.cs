@@ -1,16 +1,17 @@
 ﻿namespace CRM.Infrastructure.Repositories;
 using CRM.Domain.Entities;
 using CRM.Domain.Enums;
+using CRM.Domain.Abstractions;
 using CRM.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
-public class BookingRepository : RepositoryBase
+public class BookingRepository : RepositoryBase, IBookingRepository
 {
     public BookingRepository(AppDbContext db) : base(db) { }
 
-    public async Task AddAsync(Booking booking)
+    public Task AddAsync(Booking booking)
     {
         _context.Bookings.Add(booking);
-        await _context.SaveChangesAsync();
+        return Task.CompletedTask;
     }
     public async Task<List<Booking>> GetRangeAsync(int skip, int take)
     {
@@ -21,20 +22,18 @@ public class BookingRepository : RepositoryBase
             .Take(take)
             .ToListAsync();
     }
-    public async Task<List<Booking>> SearchAsync(string term)
-    {
-        return await _context.Bookings
-            .OrderBy(d => d.Id)
-            .ToListAsync();
-    }
-    public async Task UpdateAsync(Booking booking)
+    public Task UpdateAsync(Booking booking)
     {
         _context.Bookings.Update(booking);
-        await _context.SaveChangesAsync();
+        return Task.CompletedTask;
     }
     public async Task<Booking?> GetByIdAsync(int id)
     {
         return await _context.Bookings
             .FirstOrDefaultAsync(d => d.Id == id);
+    }
+    public IQueryable<Booking> Query()
+    {
+        return _context.Bookings.AsQueryable();
     }
 }

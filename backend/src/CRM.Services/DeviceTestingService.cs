@@ -2,23 +2,25 @@
 using CRM.Domain.DTO;
 using CRM.Domain.Entities;
 using CRM.Domain.Enums;
-using CRM.Infrastructure.Repositories;
+using CRM.Domain.Abstractions;
 using Microsoft.EntityFrameworkCore;
 
 public class DeviceTestingService
 {
-    private readonly DeviceRepository _devices;
+    private readonly IDeviceRepository _devices;
+    private readonly IDeviceStatusHistoryRepository _history;
     private readonly DeviceService _devicesSer;
-    private readonly DeviceStatusHistoryRepository _history;
+
 
     public DeviceTestingService(
-        DeviceRepository devices,
-        DeviceService devicesSer,
-        DeviceStatusHistoryRepository history)
+        IDeviceRepository devices,
+        IDeviceStatusHistoryRepository history,
+        DeviceService devicesSer)
     {
         _devices = devices;
-        _devicesSer = devicesSer;
         _history = history;
+
+        _devicesSer = devicesSer;
     }
 
     public async Task<StatusChangeDTO> RecordStatusChange(
@@ -65,7 +67,7 @@ public class DeviceTestingService
     public async Task<(List<StatusChangeDTO> Items, int Total)> GetTestsPaged(
         int skip, int take, string? sort, string? order, string? searchTerm)
     {
-        var query = _history.Context.DeviceStatusHistories.AsQueryable();
+        var query = _history.Query().AsNoTracking();
 
         query = _history.Query().Where(h => h.NewStatus == DeviceStatus.Testing);
         // Search

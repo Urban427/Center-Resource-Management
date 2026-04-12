@@ -1,6 +1,11 @@
 ﻿using CRM.Infrastructure.Persistence;
-using Microsoft.EntityFrameworkCore.Storage;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+namespace CRM.Infrastructure.Repositories;
 public abstract class RepositoryBase
 {
     protected readonly AppDbContext _context;
@@ -9,10 +14,4 @@ public abstract class RepositoryBase
     {
         _context = context;
     }
-    public AppDbContext Context => _context;
-    public Task<IDbContextTransaction> BeginTransactionAsync()
-        => _context.Database.BeginTransactionAsync();
-
-    public Task SaveChangesAsync()
-        => _context.SaveChangesAsync();
 }

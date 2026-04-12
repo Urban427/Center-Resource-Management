@@ -1,20 +1,23 @@
 ﻿namespace CRM.Services;
 using CRM.Domain.Entities;
 using CRM.Domain.Enums;
-using CRM.Infrastructure.Repositories;
+using CRM.Domain.Abstractions;
 using Microsoft.EntityFrameworkCore;
 
 public class DeviceTypeService
 {
-    private readonly DeviceTypeRepository _deviceTypes;
-    private readonly TrashRepository _trash;
-    private readonly EntityChangeSetRepository _history;
+    private readonly IDeviceTypeRepository _deviceTypes;
+    private readonly ITrashRepository _trash;
+    private readonly IEntityChangeSetRepository _history;
+    private readonly IUnitOfWork _uow;
 
     public DeviceTypeService(
-        DeviceTypeRepository deviceTypes,
-        EntityChangeSetRepository history,
-        TrashRepository trash)
+        IDeviceTypeRepository deviceTypes,
+        IEntityChangeSetRepository history,
+        IUnitOfWork uow,
+        ITrashRepository trash)
     {
+        _uow = uow;
         _deviceTypes = deviceTypes;
         _trash = trash;
         _history = history;
@@ -42,7 +45,7 @@ public class DeviceTypeService
         };
 
         await _history.AddAsync(changeSet);
-        await _history.SaveChangesAsync();
+        await _uow.SaveChangesAsync();
     }
 
     // Update device type and save changeset
@@ -88,13 +91,13 @@ public class DeviceTypeService
         }
 
         await _deviceTypes.UpdateAsync(existingDeviceType);
-        await _history.SaveChangesAsync();
+        await _uow.SaveChangesAsync();
     }
 
     public async Task<(List<DeviceType> Items, int Total)> GetDeviceTypesPaged(
     int skip, int take, string? sort, string? order, string? searchTerm)
     {
-        var query = _deviceTypes.Context.DeviceTypes.AsQueryable();
+        var query = _deviceTypes.Query().AsNoTracking();
 
         query = query.Where(d => d.Status != DeviceTypeStatus.Deleted);
         // Apply search
@@ -187,11 +190,6 @@ public class DeviceTypeService
 
         // 6. Update deviceType
         await _deviceTypes.UpdateAsync(deviceType);
-
-
-        // 7. Save all changes
-        await _deviceTypes.SaveChangesAsync();
-        await _trash.SaveChangesAsync();
-        await _history.SaveChangesAsync();
+        await _uow.SaveChangesAsync();
     }
 }

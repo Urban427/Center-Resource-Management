@@ -1,23 +1,26 @@
 ﻿namespace CRM.Services;
+using CRM.Domain.Abstractions;
 using CRM.Domain.DTO;
 using CRM.Domain.Entities;
 using CRM.Domain.Enums;
-using CRM.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 public class DeviceService
 {
-    private readonly DeviceRepository _devices;
-    private readonly EntityChangeSetRepository _history;
-    private readonly TrashRepository _trash;
-    private readonly DeviceStatusHistoryRepository _statusHistory;
+    private readonly IDeviceRepository _devices;
+    private readonly IUnitOfWork _uow;
+    private readonly IEntityChangeSetRepository _history;
+    private readonly ITrashRepository _trash;
+    private readonly IDeviceStatusHistoryRepository _statusHistory;
 
     public DeviceService(
-           DeviceRepository device,
-           EntityChangeSetRepository history,
-           TrashRepository trash,
-           DeviceStatusHistoryRepository statusHistory)
+        IUnitOfWork uow,
+        IDeviceRepository device,
+        IEntityChangeSetRepository history,
+        ITrashRepository trash,
+        IDeviceStatusHistoryRepository statusHistory)
     {
+        _uow = uow;
         _devices = device;
         _history = history;
         _trash = trash;
@@ -27,7 +30,7 @@ public class DeviceService
     public async Task<(List<DeviceDto> Items, int Total)> GetDevicesPaged(
         int skip, int take, string? sort, string? order, string? searchTerm)
     {
-        var query = _devices.Context.Devices.AsQueryable();
+        var query = _devices.Query().AsNoTracking();
 
         query = query.Where(d => d.Status != DeviceStatus.Deleted);
 
@@ -207,7 +210,6 @@ public class DeviceService
         device.Checked = DeviceLifecycleFlags.None;
         device.Status = DeviceStatus.None;
         await _devices.AddAsync(device);
-        await _devices.SaveChangesAsync();
 
         // Save EntityChangeSet for device
         var changeSet = new EntityChangeSet
@@ -226,69 +228,59 @@ public class DeviceService
         });
 
         await _history.AddAsync(changeSet);
-        await _history.SaveChangesAsync();
+        await _uow.SaveChangesAsync();
     }
 
     public async Task<List<Device>> RegisterDevicesWithHistory(List<Device> devices, string? user)
     {
-        foreach (var device in devices)
+        await _uow.BeginTransactionAsync();
+        try
         {
-            // Save device
-            await _devices.AddAsync(device);
+            foreach (var device in devices)
+            {
+                // Save device
+                await _devices.AddAsync(device);
 
-            // Status history
-            var statusHistory = new DeviceStatusHistory
-            {
-                DeviceId = device.Id,
-                OldStatus = DeviceStatus.Registered,
-                OldStageResult = StageResult.None,
-                NewStatus = DeviceStatus.Registered,
-                NewStageResult = StageResult.None,
-                ChangedAt = DateTime.UtcNow,
-                ChangedBy = user,
-                Comment = "Device created"
-            };
-            await _statusHistory.AddAsync(statusHistory);
+                // Status history
+                var statusHistory = new DeviceStatusHistory
+                {
+                    DeviceId = device.Id,
+                    OldStatus = DeviceStatus.Registered,
+                    OldStageResult = StageResult.None,
+                    NewStatus = DeviceStatus.Registered,
+                    NewStageResult = StageResult.None,
+                    ChangedAt = DateTime.UtcNow,
+                    ChangedBy = user,
+                    Comment = "Device created"
+                };
+                await _statusHistory.AddAsync(statusHistory);
 
-            // Entity change set
-            var changeSet = new EntityChangeSet
-            {
-                EntityName = "Device",
-                EntityId = device.Id.ToString(),
-                Operation = ChangeOperation.Create,
-                ChangedBy = user,
-                Comment = "Device registered"
-            };
-            changeSet.Changes.Add(new EntityChange
-            {
-                PropertyName = "Status",
-                OldValue = null,
-                NewValue = "Registered"
-            });
-            await _history.AddAsync(changeSet);
+                // Entity change set
+                var changeSet = new EntityChangeSet
+                {
+                    EntityName = "Device",
+                    EntityId = device.Id.ToString(),
+                    Operation = ChangeOperation.Create,
+                    ChangedBy = user,
+                    Comment = "Device registered"
+                };
+                changeSet.Changes.Add(new EntityChange
+                {
+                    PropertyName = "Status",
+                    OldValue = null,
+                    NewValue = "Registered"
+                });
+                await _history.AddAsync(changeSet);
+            }
+
+            await _uow.SaveChangesAsync();
         }
-
-        await _devices.SaveChangesAsync();
-        await _history.SaveChangesAsync();
-        await _statusHistory.SaveChangesAsync();
-
+        catch
+        {
+            await _uow.RollbackAsync();
+            throw;
+        }
         return devices;
-    }
-
-
-    public async Task<List<Device>> GetRange(int from, int to)
-    {
-        if (from < 0 || to <= from)
-            throw new ArgumentException("Invalid range");
-
-        int count = to - from;
-
-        return await _devices.GetRangeAsync(from, count);
-    }
-
-    public async Task<List<Device>> SearchDevices(string search)
-    {
-        return await _devices.GetRangeAsync(0, 100);
     }
     public async Task SoftDelete(Guid deviceId, string? user, string? reason = null)
     {
@@ -335,14 +327,7 @@ public class DeviceService
         };
 
         await _trash.AddAsync(trashBinElement);
-
-        // 6. Update device
         await _devices.UpdateAsync(device);
-
-
-        // 7. Save all changes
-        await _devices.SaveChangesAsync();
-        await _trash.SaveChangesAsync();
-        await _history.SaveChangesAsync();
+        await _uow.SaveChangesAsync();
     }
 }

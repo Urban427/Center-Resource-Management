@@ -1,27 +1,28 @@
 ﻿namespace CRM.Infrastructure.Repositories;
 using CRM.Domain.Entities;
 using CRM.Domain.Enums;
+using CRM.Domain.Abstractions;
 using CRM.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
-public class DeviceRepository : RepositoryBase
+public class DeviceRepository : RepositoryBase, IDeviceRepository
 {
     public DeviceRepository(AppDbContext context) : base(context) { }
 
-    public async Task UpdateAsync(Device device)
+    public Task UpdateAsync(Device device)
     {
         _context.Devices.Update(device);
-        await _context.SaveChangesAsync();
+        return Task.CompletedTask;
     }
 
-    public async Task AddAsync(Device device)
+    public Task AddAsync(Device device)
     {
         _context.Devices.Add(device);
-        await _context.SaveChangesAsync();
+        return Task.CompletedTask;
     }
-    public async Task AddRangeAsync(List<Device> device)
+    public Task AddRangeAsync(List<Device> device)
     {
         _context.Devices.AddRange(device);
-        await _context.SaveChangesAsync();
+        return Task.CompletedTask;
     }
 
     public async Task<List<Device>> GetRangeAsync(int skip, int take)
@@ -38,5 +39,9 @@ public class DeviceRepository : RepositoryBase
         return await _context.Devices
             .Include(d => d.DeviceType)
             .FirstOrDefaultAsync(d => d.Id == id);
+    }
+    public IQueryable<Device> Query()
+    {
+        return _context.Devices.AsQueryable();
     }
 }

@@ -1,20 +1,20 @@
 ﻿namespace CRM.Services;
 using CRM.Domain.Entities;
-using CRM.Infrastructure.Repositories;
+using CRM.Domain.Abstractions;
 using Microsoft.EntityFrameworkCore;
 
 public class HistoryService
 {
-    private readonly EntityChangeSetRepository _history;
+    private readonly IEntityChangeSetRepository _history;
     public HistoryService(
-        EntityChangeSetRepository history)
+        IEntityChangeSetRepository history)
     {
         _history = history;
     }
 
     public async Task<IReadOnlyList<EntityChangeSet>> getHistory(string entityName, string entityId)
     {
-        var historySet = await _history.Context.EntityChangeSets.AsQueryable()
+        var historySet = await _history.Query().AsNoTracking()
             .Where(h => h.EntityName.ToLower() == entityName.ToLower() && h.EntityId.ToLower() == entityId.ToLower())
             .OrderByDescending(h => h.ChangedAt)
             .ToListAsync();

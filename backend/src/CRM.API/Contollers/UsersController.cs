@@ -1,4 +1,6 @@
 ﻿namespace CRM.Controllers;
+
+using CRM.Domain.Abstractions;
 using CRM.Domain.DTO;
 using CRM.Domain.Entities;
 using CRM.Infrastructure.Repositories;
@@ -12,14 +14,17 @@ using Microsoft.AspNetCore.Mvc;
 public class UsersController : ControllerBase
 {
     private readonly UserService _userService;
-    private readonly RefreshTokenRepository _refreshTokenRepository;
+    private readonly IRefreshTokenRepository _refreshTokenRepository;
+    private readonly IUnitOfWork _uow;
 
     public UsersController(
         UserService userService,
-        RefreshTokenRepository refreshTokenRepository
+        IUnitOfWork uow,
+        IRefreshTokenRepository refreshTokenRepository
     )
     {
         _userService = userService;
+        _uow = uow;
         _refreshTokenRepository = refreshTokenRepository;
     }
 
@@ -93,7 +98,7 @@ public class UsersController : ControllerBase
         };
 
         await _refreshTokenRepository.AddAsync(refreshTokenEntity);
-        await _refreshTokenRepository.SaveChangesAsync();
+        await _uow.SaveChangesAsync();
 
         return Ok(new
         {
@@ -126,7 +131,7 @@ public class UsersController : ControllerBase
         };
 
         await _refreshTokenRepository.AddAsync(newTokenEntity);
-        await _refreshTokenRepository.SaveChangesAsync();
+        await _uow.SaveChangesAsync();
 
         return Ok(new
         {
